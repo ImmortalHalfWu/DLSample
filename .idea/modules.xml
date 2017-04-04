@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DLSample.iml" filepath="$PROJECT_DIR$/DLSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DL_lib/DL_lib.iml" filepath="$PROJECT_DIR$/DL_lib/DL_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one_host/one_host.iml" filepath="$PROJECT_DIR$/one_host/one_host.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one_pulgin1/one_pulgin1.iml" filepath="$PROJECT_DIR$/one_pulgin1/one_pulgin1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one_pulgin2/one_pulgin2.iml" filepath="$PROJECT_DIR$/one_pulgin2/one_pulgin2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one_pulgin3/one_pulgin3.iml" filepath="$PROJECT_DIR$/one_pulgin3/one_pulgin3.iml" />
+    </modules>
+  </component>
+</project>

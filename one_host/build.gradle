@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.3"
     defaultConfig {
         applicationId "com.wu.dlsample.dlsample"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     testCompile 'junit:junit:4.12'
     //    compile project(path: ':DL_lib')
-//    compile files('libs/dl-lib.jar')
-    compile(name:'DL_lib-debug', ext:'aar')
+    //    compile files('libs/dl-lib.jar')
+    compile(name: 'DL_lib-debug', ext: 'aar')
+    compile project(':ListenCloud-lib')
 }

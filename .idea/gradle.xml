@@ -3,13 +3,13 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\AS2.2\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DL_lib" />
+            <option value="$PROJECT_DIR$/ListenCloud-lib" />
             <option value="$PROJECT_DIR$/one_host" />
             <option value="$PROJECT_DIR$/one_pulgin1" />
             <option value="$PROJECT_DIR$/one_pulgin2" />

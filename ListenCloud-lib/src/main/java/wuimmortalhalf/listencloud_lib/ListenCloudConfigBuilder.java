@@ -4,6 +4,10 @@ package wuimmortalhalf.listencloud_lib;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 
 /**
  * <p>Class : ListenCloudConfigBuilder
@@ -17,6 +21,7 @@ public class ListenCloudConfigBuilder {
     private ListenCloudConfig mListenCloudConfig;
 
     private ListenCloudConfigBuilder() {
+
         this.mListenCloudConfig = new ListenCloudConfig();
     }
 
@@ -73,11 +78,22 @@ public class ListenCloudConfigBuilder {
         mListenCloudConfig.setEnableLog(enableLog);
         return this;
     }
+    
+    
+    /**
+     * <p>Author : ImmortalHalfWu
+     * <p>Time : 2017/4/6 14:24
+     * <p>Todo : 生成{@link ListenCloudConfig}，默认项目AppKey，在根目录tingyun.properties文件夹中，适用于release版本
+     * <p>
+    */
+    public ListenCloudConfig build(@NonNull Context appContext) {
+        return build(appContext,"20282ec81db9419581a9bf4f172a824b");
+    }
 
     /**
      * <p>Author : ImmortalHalfWu
      * <p>Time : 2017/4/6 14:15
-     * <p>Todo : 生成{@link ListenCloudConfig}
+     * <p>Todo : 生成{@link ListenCloudConfig}，外部传入AppKey，适用于Debug版本
      * @param appContext Application Context ,不可为空
      * @param licenseKey AppKey , 不可为空
      * @return {@link ListenCloudConfig} 实例

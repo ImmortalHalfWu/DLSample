@@ -22,6 +22,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import wuimmortalhalf.listencloud_lib.ListenCloudConfigBuilder;
+import wuimmortalhalf.listencloud_lib.ListenCloudUtil;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -35,13 +38,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initListenCloud();
         initSources();
         initView();
 
     }
 
-    private void initSources() {
+    private void initListenCloud() {
+            ListenCloudUtil.newInstance(
+                    ListenCloudConfigBuilder.createBuilder()
+                            .setUserId("this is user ID")
+                            .build(getApplicationContext()
+    //                                ,"20282ec81db9419581a9bf4f172a824b"
+                            )
+            );
+    }
 
+    private void initSources() {
         String filePath = Environment.getExternalStorageDirectory() + "/DLsample";
         File apkFile = new File(filePath);
         if (apkFile.exists()){
@@ -75,50 +88,6 @@ public class MainActivity extends AppCompatActivity {
         });
         adapter.notifyDataSetChanged();
 
-//        findViewById (R.id.button).setOnClickListener(new View.OnClickListener() {
-//             @Override
-//             public void onClick(View v) {
-//                 PackageInfo info = DLUtils.getPackageInfo(MainActivity.this,apkFiles[0].getAbsolutePath());
-//                 if (info.activities == null || info.activities.length == 0) return;
-//                 DLPluginManager dlPluginManager = DLPluginManager.getInstance(MainActivity.this);
-//                 Log.i(TAG, "onClick: " + info.packageName + "__" + info.activities[0].name);
-//                 dlPluginManager.startPluginActivity(MainActivity.this,new DLIntent(info.packageName,info.activities[0].name));
-//             }
-//         });
-//
-//         findViewById (R.id.button2).setOnClickListener(new View.OnClickListener() {
-//             @Override
-//             public void onClick(View v) {
-//                 PackageInfo info = DLUtils.getPackageInfo(v.getContext(),apkFiles[1].getAbsolutePath());
-//                 if (info.activities == null || info.activities.length == 0) return;
-//                 DLPluginManager dlPluginManager = DLPluginManager.getInstance(MainActivity.this);
-//                 dlPluginManager.startPluginActivity(MainActivity.this,new DLIntent(info.packageName,info.activities[0].name));
-//             }
-//         });
-//
-//        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String filePath = Environment.getExternalStorageDirectory() + "/DLsample";
-//                File apkFile = new File(filePath);
-//                if (apkFile.exists()){
-//                    apkFiles = apkFile.listFiles();
-//                    showToast("apk 数量为" + apkFiles.length);
-//                    for (File fi :
-//                            apkFiles) {
-//                        Log.i(TAG, "onClick: "+fi.getAbsolutePath());
-////                        PackageInfo info = DLUtils.getPackageInfo(MainActivity.this,fi.getAbsolutePath());
-//                        DLPluginManager.getInstance(MainActivity.this).loadApk(fi.getAbsolutePath());
-////                        if (info != null && info.activities != null && info.activities.length > 0){
-////
-////                        }
-//                    }
-//                }else {
-//                    showToast(apkFile.mkdir()+"");
-//                    showToast("未找到插件");
-//                }
-//            }
-//        });
     }
 
 

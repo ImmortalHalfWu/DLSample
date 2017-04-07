@@ -2,6 +2,7 @@ package wuimmortalhalf.listencloud_lib;
 
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.networkbench.agent.impl.NBSAppAgent;
 
@@ -13,11 +14,17 @@ import com.networkbench.agent.impl.NBSAppAgent;
 */
 public class ListenCloudUtil {
 
+    private static final String TAG = "ListenCloudUtil";
     private static ListenCloudUtil listenCloudUtil;
 
     private ListenCloudUtil(@NonNull ListenCloudConfig config) {
         if (config.getAppContext() == null || config.getLicenseKey() == null || config.getLicenseKey().trim().equals("")){
             throw new NullPointerException("ListenCloud need appContext and licenseKey,but you don't set..");
+        }
+
+        if(listenCloudUtil != null){
+            Log.e(TAG, "don't repeat create instances" );
+            return;
         }
 
         //appKey
@@ -57,6 +64,48 @@ public class ListenCloudUtil {
             throw new NullPointerException("can't get ListenCloudUtil instance , use ListenCloudUtil.newInstance(ListenCloudConfig config) in you MainActivity?");
         }
         return listenCloudUtil;
+    }
+
+    
+    /**
+     * <p>Author : ImmortalHalfWu
+     * <p>Time : 2017/4/7 15:42
+     * <p>Todo : 填充log数据
+     * <p>
+    */
+    public static ListenCloudUtil leaveBreadcrumb(@NonNull String log){
+        if (isInstance()) NBSAppAgent.leaveBreadcrumb(log);
+        return listenCloudUtil;
+    }
+
+    public static ListenCloudUtil onEvent(@NonNull String eventInfo){
+        if (isInstance()) NBSAppAgent.onEvent(eventInfo);
+        return listenCloudUtil;
+    }
+
+    public static ListenCloudUtil beginTracer(@NonNull String beginTracer){
+        if (isInstance()) NBSAppAgent.beginTracer(beginTracer);
+        return listenCloudUtil;
+    }
+
+    public static ListenCloudUtil endTracer(@NonNull String endTracer){
+        if (isInstance()) NBSAppAgent.endTracer(endTracer);
+        return listenCloudUtil;
+    }
+
+    public static ListenCloudUtil setUserCrashMessage(@NonNull String key,@NonNull String value){
+        if (isInstance()) NBSAppAgent.setUserCrashMessage(key, value);
+        return listenCloudUtil;
+    }
+
+    /**
+     * <p>Author : ImmortalHalfWu
+     * <p>Time : 2017/4/7 15:41
+     * <p>Todo : 是否已经初始化
+     * <p>
+    */
+    private static boolean isInstance(){
+        return listenCloudUtil != null;
     }
 
 }

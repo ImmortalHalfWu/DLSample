@@ -25,6 +25,7 @@ import java.util.List;
 import wuimmortalhalf.listencloud_lib.ListenCloudConfigBuilder;
 import wuimmortalhalf.listencloud_lib.ListenCloudUtil;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     ListenCloudConfigBuilder.createBuilder()
                             .setUserId("this is user ID")
                             .build(getApplicationContext()
-    //                                ,"20282ec81db9419581a9bf4f172a824b"
+                                    ,"20282ec81db9419581a9bf4f172a824b"
                             )
             );
     }

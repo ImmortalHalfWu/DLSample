@@ -1,1 +1,1 @@
-include ':one_host', ':one_pulgin1', ':one_pulgin2', ':DL_lib', ':one_pulgin3', ':ListenCloud-lib'
+include ':one_host', ':one_pulgin1', ':one_pulgin2', ':DL_lib', ':one_pulgin3', ':ListenCloud-lib', ':one_pulgin4', ':one_pulgin4'

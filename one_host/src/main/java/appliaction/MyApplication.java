@@ -2,8 +2,6 @@ package appliaction;
 
 import android.app.Application;
 
-import wuimmortalhalf.listencloud_lib.ListenCloudConfigBuilder;
-import wuimmortalhalf.listencloud_lib.ListenCloudUtil;
 
 /**
  * Created by ImmortalHalfWu on 2017/4/6 10:13.

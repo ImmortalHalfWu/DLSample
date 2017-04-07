@@ -31,5 +31,4 @@ dependencies {
     compile 'com.android.support:design:22.2.1'
     testCompile 'junit:junit:4.12'
     provided files('external-jars/dl-lib.jar')
-    compile project(':ListenCloud-lib')
 }

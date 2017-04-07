@@ -1,26 +1,16 @@
-package com.wu.dlsample.one_pulgin3;
+package com.wu.dlsample.one_pulgin4;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.ParcelFileDescriptor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ryg.dynamicload.DLBasePluginActivity;
-
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import wuimmortalhalf.listencloud_lib.ListenCloudConfigBuilder;
 
 public class Main2Activity extends DLBasePluginActivity {
 
@@ -32,8 +22,8 @@ public class Main2Activity extends DLBasePluginActivity {
         setContentView(R.layout.activity_main2);
         
         initView();
-        ListenCloudConfigBuilder.createBuilder()
-                .build(getApplicationContext(),"");
+//        ListenCloudConfigBuilder.createBuilder()
+//                .build(getApplicationContext(),"");
     }
 
     private void initView() {
